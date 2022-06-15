@@ -399,7 +399,7 @@ remove_interactive(struct interactive *ip, int link_dead)
 	    ob->interactive->snoop_on->snoop_by = 0;
 	    ob->interactive->snoop_on = 0;
 	}
-	write_socket("Closing down.\n", ob);
+	write_socket("Koniec sesji.\n", ob);
 	telnet_detach(ob->interactive->tp);
 #ifdef SUPER_SNOOP
 	if (ob->interactive->snoop_fd >= 0) {
@@ -922,7 +922,7 @@ notify_no_command()
 	command_giver->interactive->default_err_message = 0;
     }
     else
-	(void)add_message("What?\n");
+	(void)add_message("Nie rozumiem?\n");
 }
 
 void
