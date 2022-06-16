@@ -109,6 +109,7 @@ xalloc(size_t size)
             reserved_area = 0;
             p = "Temporary out of MEMORY. Freeing reserve.\n";
             (void)write(1, p, strlen(p));
+            printf("The value of size: %zu", size);
             slow_shut_down_to_do = 6;
             return xalloc(size);        /* Try again */
         }
